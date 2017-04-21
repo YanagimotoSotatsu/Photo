@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Accounts
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -107,6 +108,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }else{
             print("画像がありません")
         }
+    }
+    @IBAction func onTappedUploadButton(){
+        if photoImageView.image != nil{
+            let activityVC = UIActivityViewController(activityItems: [photoImageView.image!,"#PhotoMaster"], applicationActivities: nil)
+            self.present(activityVC, animated: true, completion:  nil)
+        }else{
+            print("画像がありません")
+        }
+        
     }
     
 
